@@ -1,0 +1,41 @@
+.body {
+	-fx-min-width: 1080.0;
+	-fx-min-height:720.0;
+	-fx-background-color: #ffffff;
+}
+.titulo {
+	-fx-font-size: 24px;
+	-fx-font-weight: bold;	
+    -fx-font-family: Roboto;
+}
+.menu-lateral {
+	-fx-background-color: rgb(247, 249, 250);
+	-fx-min-height:720.0;
+	-fx-min-width: 400.0;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 10, 0, 0, 0);
+}
+.input-label {
+	-fx-font-size: 16px;
+	-fx-font-weight: bold;	
+    -fx-font-family: Roboto;
+}
+
+.botao-arquivo {
+	-fx-background-color: rgb(247, 249, 250);
+	-fx-text-fill:  rgb(116, 116, 116);
+	-fx-border-radius: 50px;
+    -fx-border-width: 20px;
+}
+.botao-arquivo:hover {
+    -fx-background-color:rgb(188, 191, 193);   
+    -fx-text-fill: #ffffff;
+}
+
+
+.botao-submit {
+	-fx-background-color: #2979ff;
+	-fx-color: #ffffff;
+	-fx-border-radius: 50px;
+    -fx-border-width: 20px;
+	-fx-font-size: 14.0;
+}

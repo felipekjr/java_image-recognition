@@ -6,13 +6,13 @@ import br.imd.controle.TelaPrincipalController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Principal extends Application {	
 	private Stage stage1;
-	public AnchorPane layout1;
-	public AnchorPane layout2;
+	public Pane layout1;
+	public Pane layout2;
 
 	@Override
 	public void start(Stage primaryStage) throws IOException{
@@ -22,7 +22,7 @@ public class Principal extends Application {
 		// Carrega a tela principal
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Principal.class.getResource("visao/TelaPrincipal.fxml"));
-		layout1 = (AnchorPane) loader.load();
+		layout1 = (Pane) loader.load();
 		
 		// Mostra a cena
 		Scene scene = new Scene(layout1);
