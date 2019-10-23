@@ -33,9 +33,9 @@
 
 
 .botao-submit {
-	-fx-background-color: #2ea84f;
-	-fx-color: #ffffff !important;
-	-fx-border-radius: 50px;
-    -fx-border-width: 20px;
+	-fx-background-color: #367af5;
+	-fx-text-fill: white;	
 	-fx-font-size: 14.0;
+	-fx-background-radius: 5em; 	
+	
 }
