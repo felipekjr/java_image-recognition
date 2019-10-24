@@ -11,8 +11,7 @@ import javafx.stage.Stage;
 
 public class Principal extends Application {	
 	private Stage stage1;
-	public Pane layout1;
-	public Pane layout2;
+	public Pane layout1;	
 
 	@Override
 	public void start(Stage primaryStage) throws IOException{

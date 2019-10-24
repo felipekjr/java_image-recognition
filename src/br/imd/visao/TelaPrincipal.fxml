@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="884.0" minWidth="-Infinity" prefHeight="884.0" prefWidth="1922.0" styleClass="body" stylesheets="@../../../resources/styles/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane id="layout1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="884.0" minWidth="-Infinity" prefHeight="884.0" prefWidth="1922.0" styleClass="body" stylesheets="@../../../resources/styles/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.imd.controle.TelaPrincipalController">
    <children>
       <Pane layoutX="-8.0" layoutY="-9.0" prefHeight="892.0" prefWidth="402.0" styleClass="menu-lateral" stylesheets="@../../../resources/styles/styles.css">
          <children>
-            <Label layoutX="29.0" layoutY="27.0" styleClass="titulo" stylesheets="@../../../resources/styles/styles.css" text="Java Image Recognition" />
-            <Button layoutX="103.0" layoutY="596.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="201.0" styleClass="botao-submit" stylesheets="@../../../resources/styles/styles.css" text="Analisar" />
-            <Label layoutX="33.0" layoutY="311.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Imagem" />
-            <Label layoutX="35.0" layoutY="459.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Medida de Distancia" />
-            <MenuButton layoutX="36.0" layoutY="487.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="274.0" text="Selecione uma medida">
+            <Label layoutX="35.0" layoutY="425.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Imagem" />
+            <Button layoutX="36.0" layoutY="457.0" mnemonicParsing="false" prefHeight="263.0" prefWidth="334.0" styleClass="botao-arquivo" stylesheets="@../../../resources/styles/styles.css" text="+" />
+            <Label layoutX="35.0" layoutY="221.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Medida de Distancia" />
+            <MenuButton layoutX="36.0" layoutY="251.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="274.0" stylesheets="@../../../resources/styles/styles.css" text="Selecione uma medida">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
               </items>
             </MenuButton>
-            <Button layoutX="34.0" layoutY="343.0" mnemonicParsing="false" styleClass="botao-arquivo" stylesheets="@../../../resources/styles/styles.css" text="Selecione uma imagem" />
+            <Button layoutX="103.0" layoutY="774.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="201.0" styleClass="botao-submit" stylesheets="@../../../resources/styles/styles.css" text="Analisar" />
+            <Label layoutX="34.0" layoutY="322.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Valor de K" />
+            <TextField layoutX="34.0" layoutY="352.0" />
          </children>
       </Pane>
+      <Label layoutX="1116.0" layoutY="38.0" styleClass="titulo" stylesheets="@../../../resources/styles/styles.css" text="Java Image Recognition" />
    </children>
 </Pane>

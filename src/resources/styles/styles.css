@@ -1,41 +1,52 @@
 .body {
 	-fx-min-width: 1080.0;
-	-fx-min-height:720.0;
+	-fx-min-height:1080.0;
 	-fx-background-color: #ffffff;
 }
 .titulo {
-	-fx-font-size: 24px;
+	-fx-font-size: 18px;
 	-fx-font-weight: bold;	
     -fx-font-family: Roboto;
+    -fx-text-fill: #676C6E;
 }
+
 .menu-lateral {
 	-fx-background-color: rgb(247, 249, 250);
-	-fx-min-height:720.0;
+	-fx-min-height:1080.0;
 	-fx-min-width: 400.0;
 	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 10, 0, 0, 0);
 }
+
 .input-label {
 	-fx-font-size: 16px;
 	-fx-font-weight: bold;	
     -fx-font-family: Roboto;
+    -fx-text-fill: #676C6E;
 }
 
 .botao-arquivo {
-	-fx-background-color: rgb(247, 249, 250);
-	-fx-text-fill:  rgb(116, 116, 116);
-	-fx-border-radius: 50px;
-    -fx-border-width: 20px;
+	-fx-background-color: white;
+	-fx-text-fill:  #676C6E;	
+	-fx-background-radius: 0.8em; 
+	-fx-font-size: 48px;	
+    -fx-font-family: Roboto;
+    -fx-cursor: hand;
+    -fx-border-color: #B5C2C8 ;
+    -fx-border-width: 2; 
+    -fx-border-radius: 0.8em;
+    -fx-border-style: segments(10, 15, 15, 15)  line-cap round;
 }
-.botao-arquivo:hover {
-    -fx-background-color:rgb(188, 191, 193);   
-    -fx-text-fill: #ffffff;
+.botao-arquivo:hover {   
+    -fx-text-fill: #367af5;
+    -fx-border-color: #367af5;   
 }
-
 
 .botao-submit {
 	-fx-background-color: #367af5;
 	-fx-text-fill: white;	
-	-fx-font-size: 14.0;
+	-fx-font-size: 14px;
+	-fx-font-weight: bold;	
 	-fx-background-radius: 5em; 	
+	-fx-cursor: hand;
 	
 }
