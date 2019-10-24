@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -11,22 +14,38 @@
 
 <Pane id="layout1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="884.0" minWidth="-Infinity" prefHeight="884.0" prefWidth="1922.0" styleClass="body" stylesheets="@../../../resources/styles/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.imd.controle.TelaPrincipalController">
    <children>
-      <Pane layoutX="-8.0" layoutY="-9.0" prefHeight="892.0" prefWidth="402.0" styleClass="menu-lateral" stylesheets="@../../../resources/styles/styles.css">
+      <Pane prefHeight="892.0" prefWidth="402.0" styleClass="menu-lateral" stylesheets="@../../../resources/styles/styles.css">
          <children>
-            <Label layoutX="35.0" layoutY="425.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Imagem" />
-            <Button layoutX="36.0" layoutY="457.0" mnemonicParsing="false" prefHeight="263.0" prefWidth="334.0" styleClass="botao-arquivo" stylesheets="@../../../resources/styles/styles.css" text="+" />
-            <Label layoutX="35.0" layoutY="221.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Medida de Distancia" />
-            <MenuButton layoutX="36.0" layoutY="251.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="274.0" stylesheets="@../../../resources/styles/styles.css" text="Selecione uma medida">
+            <Label layoutX="35.0" layoutY="416.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Imagem" />
+            <Button layoutX="36.0" layoutY="454.0" mnemonicParsing="false" prefHeight="263.0" prefWidth="334.0" styleClass="botao-arquivo" stylesheets="@../../../resources/styles/styles.css" text="+" />
+            <Label layoutX="32.0" layoutY="183.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Medida de Distancia" />
+            <MenuButton layoutX="33.0" layoutY="213.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="334.0" stylesheets="@../../../resources/styles/styles.css" text="Selecione uma medida">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
               </items>
             </MenuButton>
-            <Button layoutX="103.0" layoutY="774.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="201.0" styleClass="botao-submit" stylesheets="@../../../resources/styles/styles.css" text="Analisar" />
-            <Label layoutX="34.0" layoutY="322.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Valor de K" />
-            <TextField layoutX="34.0" layoutY="352.0" />
+            <Button layoutX="103.0" layoutY="818.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="201.0" styleClass="botao-submit" stylesheets="@../../../resources/styles/styles.css" text="Analisar" />
+            <Label layoutX="34.0" layoutY="304.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Valor de K" />
+            <TextField layoutX="34.0" layoutY="334.0" prefHeight="25.0" prefWidth="334.0" />
+            <Label layoutX="96.0" layoutY="40.0" styleClass="titulo" stylesheets="@../../../resources/styles/styles.css" text="JAVA IMAGE-RECOGNITION" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="46.0" layoutX="32.0" layoutY="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="49.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="0.9711538461538461">
+                     <stops>
+                        <Stop color="#379cee" />
+                        <Stop color="#379cee" offset="0.03333333333333333" />
+                        <Stop color="#3aebb0" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Text layoutX="48.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="JIR">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
-      <Label layoutX="1116.0" layoutY="38.0" styleClass="titulo" stylesheets="@../../../resources/styles/styles.css" text="Java Image Recognition" />
    </children>
 </Pane>
