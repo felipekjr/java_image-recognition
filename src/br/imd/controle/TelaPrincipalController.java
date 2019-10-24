@@ -5,7 +5,6 @@ import java.io.IOException;
 import br.imd.Principal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.MenuItem;
 
 public class TelaPrincipalController {
 
