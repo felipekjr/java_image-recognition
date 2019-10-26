@@ -40,6 +40,17 @@
     -fx-text-fill: #367af5;
     -fx-border-color: #367af5;   
 }
+.botao-apagar {
+	-fx-background-color: transparent;
+	-fx-text-fill: #d50000;
+	-fx-font-size: 14px;
+	-fx-font-weight: bold;	
+	-fx-background-radius: 5em; 	
+	-fx-cursor: hand;
+}
+.botao-apagar:hover {
+	 -fx-underline: true;
+}
 
 .botao-submit {
 	-fx-background-color: #367af5;

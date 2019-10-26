@@ -1,6 +1,8 @@
 package br.imd.controle;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,12 +14,19 @@ import br.imd.modelo.ParametrosAnalise;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -29,7 +38,8 @@ public class TelaPrincipalController {
 	// elementos da view
 	@FXML private TextField textField;
     @FXML private ComboBox<MedidaDistancia> comboBox = new ComboBox<MedidaDistancia>();
-    @FXML private Button button;
+    @FXML private ImageView imageView;    
+    @FXML private Button botaoApagar;
     // variáveis locais
     private MedidaDistancia medida;
     private String texto;
@@ -50,27 +60,47 @@ public class TelaPrincipalController {
     }
     
     @FXML
-    protected void initialize() {
-    	// escutar campo de texto    	
+    protected void initialize() {    	
+    	imageView.setVisible(false);
+    	botaoApagar.setVisible(false);
     	textField.textProperty().addListener((observable, oldValue, newValue) -> {
     		this.texto = newValue;
         });   
-    	// inicializa o select
+    	
     	comboBox.setItems(FXCollections.observableArrayList(MedidaDistancia.EUCLIDIANA, MedidaDistancia.CHEBYCHEV));
-    	comboBox.valueProperty().addListener((observable, oldValue, newValue) -> this.medida = newValue);
+    	comboBox.valueProperty().addListener((observable, oldValue, newValue) -> this.medida = newValue);    	
     }
     
     @FXML
-    private void escolherImagem(ActionEvent event) {
+    private void escolherImagem(ActionEvent event) throws IOException {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Escolher imagem");
         File file = chooser.showOpenDialog(new Stage());
-        this.imagem = file.getAbsolutePath();
+        imagem = file.getAbsolutePath();        
+        Image image = new Image(new FileInputStream(this.imagem));       
+        this.showImage(image);  
+    }
+    
+    @FXML
+    private void apagarImagem(ActionEvent event) throws IOException {
+    	imagem = "";
+    	imageView.setVisible(false);
+    	botaoApagar.setVisible(false);
     }
     
     @FXML
     private void handleSubmitAction(ActionEvent event) {
     	System.out.println(this.texto + ' ' + this.medida + ' ' + this.imagem );
     	dao.calcular(this.texto, this.medida, this.imagem);
+    }
+    
+    private void showImage(Image image) {
+    	Rectangle clip = new Rectangle(imageView.getFitWidth(), imageView.getFitHeight());
+		clip.setArcWidth(70);
+		clip.setArcHeight(70);
+		imageView.setClip(clip);		
+		imageView.setImage(image);
+		imageView.setVisible(true);
+		botaoApagar.setVisible(true);
     }
 }
