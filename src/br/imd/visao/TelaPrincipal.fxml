@@ -42,9 +42,9 @@
             
             
             <Label layoutX="35.0" layoutY="416.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Imagem" />
-            <Button layoutX="36.0" layoutY="454.0" mnemonicParsing="false" prefHeight="263.0" prefWidth="334.0" styleClass="botao-arquivo" stylesheets="@../../../resources/styles/styles.css" text="+" />
+            <Button text="+" onAction="#escolherImagem" layoutX="36.0" layoutY="454.0" mnemonicParsing="false" prefHeight="263.0" prefWidth="334.0" styleClass="botao-arquivo" stylesheets="@../../../resources/styles/styles.css"  />
             
-            <Button layoutX="103.0" layoutY="818.0" mnemonicParsing="false" onAction="#handleSubmitAction" prefHeight="46.0" prefWidth="201.0" styleClass="botao-submit" stylesheets="@../../../resources/styles/styles.css" text="Analisar" />
+            <Button text="Analisar" onAction="#handleSubmitAction" layoutX="103.0" layoutY="818.0" mnemonicParsing="false"  prefHeight="46.0" prefWidth="201.0" styleClass="botao-submit" stylesheets="@../../../resources/styles/styles.css"/>
          </children>
       </Pane>
    </children>
