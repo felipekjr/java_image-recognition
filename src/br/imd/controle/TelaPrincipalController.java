@@ -27,20 +27,22 @@ import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class TelaPrincipalController {
-	// classes
+	
 	private Principal main;
 	ParametrosAnalise parametrosAnalise = new ParametrosAnalise();
 	ParametrosAnaliseDAO dao = new ParametrosAnaliseDAO();
-	// elementos da view
+	
 	@FXML private TextField textField;
+	@FXML private Text textoResultado;
     @FXML private ComboBox<MedidaDistancia> comboBox = new ComboBox<MedidaDistancia>();
     @FXML private ImageView imageView;    
     @FXML private Button botaoApagar;
-    // variáveis locais
+   
     private MedidaDistancia medida;
     private String texto;
     private String imagem;
@@ -62,12 +64,17 @@ public class TelaPrincipalController {
     @FXML
     protected void initialize() {    	
     	imageView.setVisible(false);
+    	textoResultado.setVisible(false);
     	botaoApagar.setVisible(false);
     	textField.textProperty().addListener((observable, oldValue, newValue) -> {
     		this.texto = newValue;
         });   
     	
-    	comboBox.setItems(FXCollections.observableArrayList(MedidaDistancia.EUCLIDIANA, MedidaDistancia.CHEBYCHEV));
+    	comboBox.setItems(FXCollections.observableArrayList(
+    			MedidaDistancia.EUCLIDIANA, 
+    			MedidaDistancia.CHEBYSHEV,
+    			MedidaDistancia.MANHATTAN
+    			));
     	comboBox.valueProperty().addListener((observable, oldValue, newValue) -> this.medida = newValue);    	
     }
     

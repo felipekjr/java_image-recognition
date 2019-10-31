@@ -9,6 +9,12 @@
     -fx-font-family: Roboto;
     -fx-text-fill: #676C6E;
 }
+.texto-resultado {
+	-fx-font-size: 30px;
+	-fx-font-weight: bold;	
+	-fx-font-family: Roboto;
+	-fx-text-fill: #676C6E;
+}
 
 .menu-lateral {
 	-fx-background-color: rgb(247, 249, 250);
