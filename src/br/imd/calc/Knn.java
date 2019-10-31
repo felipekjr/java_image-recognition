@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Knn {
 	private int[] ids;
-	private ArrayList<String[]> dataset;
+	private ArrayList<String[]> dataset = new ArrayList<String[]>();
 	private int k;
-
+	
 	public boolean  calcular() {
 		// TODO Auto-generated constructor stub
 		int[] ids = this.ids;

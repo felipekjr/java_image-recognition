@@ -21,14 +21,14 @@ public class Chebyshev extends CalculoDistancia {
 		for (int j = 1; j < dataset.size(); j++) { // apartir de 1 pois o 0 são os atributos
 			for (int k = 0; k < 1000; k++) { // percorre cada elemento do HOG por lço
 				actual_dist = Float.parseFloat(dataset.get(j)[k + 1]) - attr.get(k); // fazendo (xi-zi)
-				if (actual_dist > max_dist) {
+				if (actual_dist > max_dist) { // trocando para a distância Máxima
 					max_dist = actual_dist;
 				}
 			}
 			dist.put(j, max_dist); // colocando no dicionário o id do elemento com sua respectiva distância
 			max_dist = 0;
 		}
-		return dist;
+		return dist; // dist = {id: distancia_da_imagem}
 	}
 
 }
