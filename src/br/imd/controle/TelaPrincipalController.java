@@ -46,6 +46,7 @@ public class TelaPrincipalController {
     private MedidaDistancia medida;
     private String texto;
     private String imagem;
+    private boolean hasPerson;
     
     
     public void setMainApp(Principal main) {
@@ -98,7 +99,8 @@ public class TelaPrincipalController {
     @FXML
     private void handleSubmitAction(ActionEvent event) {
     	System.out.println(this.texto + ' ' + this.medida + ' ' + this.imagem );
-    	dao.calcular(this.texto, this.medida, this.imagem);
+    	hasPerson = dao.calcular(this.texto, this.medida, this.imagem);
+    	this.showResult(hasPerson);
     }
     
     private void showImage(Image image) {
@@ -109,5 +111,11 @@ public class TelaPrincipalController {
 		imageView.setImage(image);
 		imageView.setVisible(true);
 		botaoApagar.setVisible(true);
+    }
+    
+    private void showResult(boolean hasPerson) {
+    	textoResultado.setText(hasPerson ? "Existe uma pessoa na imagem!" : "Não existe pessoa!" );
+    	textoResultado.setStyle(hasPerson ? "-fx-text-fill: #00c853;" : "-fx-text-fill: #d50000;");
+    	textoResultado.setVisible(true);
     }
 }
