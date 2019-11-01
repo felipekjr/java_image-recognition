@@ -99,7 +99,7 @@ public class TelaPrincipalController {
     @FXML
     private void handleSubmitAction(ActionEvent event) {
     	System.out.println(this.texto + ' ' + this.medida + ' ' + this.imagem );
-    	hasPerson = dao.calcular(this.texto, this.medida, this.imagem);
+    	hasPerson = dao.calcular(Integer.parseInt(this.texto), this.medida, this.imagem);
     	this.showResult(hasPerson);
     }
     
