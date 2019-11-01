@@ -4,19 +4,10 @@ import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
-public class Chebyshev extends CalculoDistancia {
+public final class Chebyshev implements CalculoDistancia {
 
-	
-	public Chebyshev(ArrayList<Float> attr, ArrayList<String[]> dataset) {
-		super(attr, dataset);
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public Dictionary<Integer, Float> calcular() {
+	public static Dictionary<Integer, Float> calcular(ArrayList<Float> attr, ArrayList<String[]> dataset) {
 		// TODO Auto-generated method stub
-		ArrayList<Float> attr = this.attr;
-		ArrayList<String[]> dataset = this.dataset;
 		float actual_dist = 0;
 		float max_dist = 0;
 		Dictionary<Integer, Float> dist = new Hashtable<Integer, Float>();

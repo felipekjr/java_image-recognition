@@ -4,18 +4,11 @@ import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
-public class Manhattan extends CalculoDistancia {
+public final class Manhattan implements CalculoDistancia {
 
 	
-	public Manhattan(ArrayList<Float> attr, ArrayList<String[]> dataset) {
-		super(attr, dataset);
-		// TODO Auto-generated constructor stub
-	}
-	@Override
-	public Dictionary<Integer, Float> calcular() {
+	public static Dictionary<Integer, Float> calcular(ArrayList<Float> attr, ArrayList<String[]> dataset) {
 		// TODO Auto-generated method stub
-		ArrayList<Float> attr = this.attr;
-		ArrayList<String[]> dataset = this.dataset;
 		float sum_dist = 0;
 		Dictionary<Integer, Float> dist = new Hashtable<Integer, Float>();
 		for (int j = 1; j < dataset.size(); j++) { // apartir de 1 pois o 0 são os atributos
@@ -28,4 +21,5 @@ public class Manhattan extends CalculoDistancia {
 		}
 		return dist;
 	}
+	
 }
