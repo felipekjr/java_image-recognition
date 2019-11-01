@@ -26,12 +26,17 @@ public class ExtratorAtributos {
 		}
 		return attr; 
 	}
+	public ExtratorAtributos(String path_imagem) {
+		this.path_imagem = path_imagem;
+	}
 	public ExtratorAtributos() {
 		// TODO Auto-generated constructor stub
 	}
+	
 	public String getPath_imagem() {
 		return path_imagem;
 	}
+	
 	public void setPath_imagem(String path_imagem) {
 		this.path_imagem = path_imagem;
 	}

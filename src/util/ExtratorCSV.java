@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class ExtratorCSV {
 
-	public ArrayList<String[]> dataset = new ArrayList<String[]>();
-	protected String path_dataset = "C:\\Users\\Yago\\image-recognition\\src\\resources\\datasets\\attr_imagens.csv";
+	public ArrayList<String[]> dataset;
+	protected String path_dataset;
 
 	public ArrayList<String[]> extractDataset() {
 		try {
@@ -33,6 +33,8 @@ public class ExtratorCSV {
 
 	public ExtratorCSV() {
 		// TODO Auto-generated constructor stub
+		this.dataset = new ArrayList<String[]>();
+		this.path_dataset  = "C:\\Users\\Yago\\image-recognition\\src\\resources\\datasets\\attr_imagens.csv";
 	}
 
 	public ArrayList<String[]> getDataset() {

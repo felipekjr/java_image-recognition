@@ -6,10 +6,11 @@ import java.util.Hashtable;
 
 public class Manhattan extends CalculoDistancia {
 
-	public Manhattan() {
+	
+	public Manhattan(ArrayList<Float> attr, ArrayList<String[]> dataset) {
+		super(attr, dataset);
 		// TODO Auto-generated constructor stub
 	}
-
 	@Override
 	public Dictionary<Integer, Float> calcular() {
 		// TODO Auto-generated method stub

@@ -6,7 +6,9 @@ import java.util.Hashtable;
 
 public class Chebyshev extends CalculoDistancia {
 
-	public Chebyshev() {
+	
+	public Chebyshev(ArrayList<Float> attr, ArrayList<String[]> dataset) {
+		super(attr, dataset);
 		// TODO Auto-generated constructor stub
 	}
 

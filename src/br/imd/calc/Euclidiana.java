@@ -5,10 +5,12 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 
 public class Euclidiana extends CalculoDistancia {
-	public Euclidiana() {
+
+	public Euclidiana(ArrayList<Float> attr, ArrayList<String[]> dataset) {
+		super(attr, dataset);
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	@Override
 	public Dictionary<Integer, Float> calcular() {
 		ArrayList<Float> attr = this.attr;
