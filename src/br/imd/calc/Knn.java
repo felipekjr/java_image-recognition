@@ -3,18 +3,11 @@ package br.imd.calc;
 import java.util.ArrayList;
 import java.util.Dictionary;
 
-public class Knn {
-	
-	private int[] ids;
-	private ArrayList<String[]> dataset = new ArrayList<String[]>();
-	private Dictionary<Integer, Float> dist;
-	private int k;
+public final class Knn {
 
-	public boolean calcular() {
+	public static boolean calcular(ArrayList<String[]> dataset, Dictionary<Integer, Float> dist, int k) {
 		// TODO Auto-generated constructor stub
-		int[] ids = montaIds();
-		ArrayList<String[]> dataset = this.dataset;
-		int k = this.k;
+		int[] ids = montaIds(dist);
 		int cont_person = 0;
 		int cont_not_person = 0;
 		String rotulo = "person";
@@ -41,7 +34,8 @@ public class Knn {
 			return false;
 		}
 	}
-	private int[] montaIds() {
+	private  static int[] montaIds(Dictionary<Integer, Float> dist) {
+		int[] ids = new int[100];
 		for (int j = 1; j < 101; j++) {
 			ids[j - 1] = j;
 		}
@@ -55,35 +49,5 @@ public class Knn {
 			}
 		}
 		return ids;
-	}
-	public int[] getIds() {
-		return ids;
-	}
-	public void setIds(int[] ids) {
-		this.ids = ids;
-	}
-
-	public ArrayList<String[]> getDataset() {
-		return dataset;
-	}
-
-	public void setDataset(ArrayList<String[]> dataset) {
-		this.dataset = dataset;
-	}
-
-	public int getK() {
-		return k;
-	}
-
-	public void setK(int k) {
-		this.k = k;
-	}
-	
-	public Knn(ArrayList<String[]> dataset, int k, Dictionary<Integer, Float> dist) {
-		super();
-		this.ids = new int[100];
-		this.dataset = dataset;
-		this.k = k;
-		this.dist = dist;
 	}
 }

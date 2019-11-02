@@ -27,23 +27,26 @@ import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class TelaPrincipalController {
-	// classes
+	
 	private Principal main;
 	ParametrosAnalise parametrosAnalise = new ParametrosAnalise();
 	ParametrosAnaliseDAO dao = new ParametrosAnaliseDAO();
-	// elementos da view
+	
 	@FXML private TextField textField;
+	@FXML private Text textoResultado;
     @FXML private ComboBox<MedidaDistancia> comboBox = new ComboBox<MedidaDistancia>();
     @FXML private ImageView imageView;    
     @FXML private Button botaoApagar;
-    // variáveis locais
+   
     private MedidaDistancia medida;
     private String texto;
     private String imagem;
+    private boolean hasPerson;
     
     
     public void setMainApp(Principal main) {
@@ -62,12 +65,17 @@ public class TelaPrincipalController {
     @FXML
     protected void initialize() {    	
     	imageView.setVisible(false);
+    	textoResultado.setVisible(false);
     	botaoApagar.setVisible(false);
     	textField.textProperty().addListener((observable, oldValue, newValue) -> {
     		this.texto = newValue;
         });   
     	
-    	comboBox.setItems(FXCollections.observableArrayList(MedidaDistancia.EUCLIDIANA, MedidaDistancia.CHEBYCHEV));
+    	comboBox.setItems(FXCollections.observableArrayList(
+    			MedidaDistancia.EUCLIDIANA, 
+    			MedidaDistancia.CHEBYSHEV,
+    			MedidaDistancia.MANHATTAN
+    			));
     	comboBox.valueProperty().addListener((observable, oldValue, newValue) -> this.medida = newValue);    	
     }
     
@@ -91,7 +99,8 @@ public class TelaPrincipalController {
     @FXML
     private void handleSubmitAction(ActionEvent event) {
     	System.out.println(this.texto + ' ' + this.medida + ' ' + this.imagem );
-    	dao.calcular(this.texto, this.medida, this.imagem);
+    	hasPerson = dao.calcular(Integer.parseInt(this.texto), this.medida, this.imagem);
+    	this.showResult(hasPerson);
     }
     
     private void showImage(Image image) {
@@ -102,5 +111,11 @@ public class TelaPrincipalController {
 		imageView.setImage(image);
 		imageView.setVisible(true);
 		botaoApagar.setVisible(true);
+    }
+    
+    private void showResult(boolean hasPerson) {
+    	textoResultado.setText(hasPerson ? "Existe uma pessoa na imagem!" : "Não existe pessoa!" );
+    	textoResultado.setStyle(hasPerson ? "-fx-text-fill: #00c853;" : "-fx-text-fill: #d50000;");
+    	textoResultado.setVisible(true);
     }
 }

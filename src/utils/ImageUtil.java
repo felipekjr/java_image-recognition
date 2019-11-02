@@ -1,4 +1,4 @@
-package util;
+package utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,16 +7,14 @@ import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.HOGDescriptor;
 import org.opencv.core.*;
 
-public class ExtratorAtributos {
+public final class ImageUtil {
 	
-	protected String path_imagem;
-	
-	public ArrayList<Float> extractAttr(){
+	public static ArrayList<Float> extractAttr(String caminhoImagem){
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 		HOGDescriptor hog = new HOGDescriptor();
 		Mat img = new Mat();
 		MatOfFloat features = new MatOfFloat();
-		img = Imgcodecs.imread(this.path_imagem, Imgcodecs.IMREAD_GRAYSCALE);
+		img = Imgcodecs.imread(caminhoImagem, Imgcodecs.IMREAD_GRAYSCALE);
 		Imgproc.resize(img, img, new Size(64, 128), 0.5, 0.5, Imgproc.INTER_LINEAR);
 		hog.compute(img, features);
 		List<Float> arrayOfFeatures = features.toList();
@@ -25,19 +23,5 @@ public class ExtratorAtributos {
 			attr.add(arrayOfFeatures.get(j));	
 		}
 		return attr; 
-	}
-	public ExtratorAtributos(String path_imagem) {
-		this.path_imagem = path_imagem;
-	}
-	public ExtratorAtributos() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	public String getPath_imagem() {
-		return path_imagem;
-	}
-	
-	public void setPath_imagem(String path_imagem) {
-		this.path_imagem = path_imagem;
-	}
+	}	
 }
