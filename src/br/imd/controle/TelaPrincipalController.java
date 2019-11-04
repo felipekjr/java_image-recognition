@@ -35,16 +35,16 @@ public class TelaPrincipalController {
 	
 	private Principal main;
 	ParametrosAnalise parametrosAnalise = new ParametrosAnalise();
-	ParametrosAnaliseDAO dao = new ParametrosAnaliseDAO();
+	ParametrosAnaliseDAO dao = new ParametrosAnaliseDAO();	
 	
-	@FXML private TextField textField;
-	@FXML private Text textoResultado;
-    @FXML private ComboBox<MedidaDistancia> comboBox = new ComboBox<MedidaDistancia>();
+	@FXML private Text textoResultado;	
+    @FXML private ComboBox<MedidaDistancia> comboBoxMedida = new ComboBox<MedidaDistancia>();
+    @FXML private ComboBox<Integer> comboBoxK = new ComboBox<Integer>();
     @FXML private ImageView imageView;    
     @FXML private Button botaoApagar;
    
     private MedidaDistancia medida;
-    private String texto;
+    private Integer valorK;
     private String imagem;
     private boolean hasPerson;
     
@@ -66,17 +66,16 @@ public class TelaPrincipalController {
     protected void initialize() {    	
     	imageView.setVisible(false);
     	textoResultado.setVisible(false);
-    	botaoApagar.setVisible(false);
-    	textField.textProperty().addListener((observable, oldValue, newValue) -> {
-    		this.texto = newValue;
-        });   
+    	botaoApagar.setVisible(false);    	
     	
-    	comboBox.setItems(FXCollections.observableArrayList(
+    	comboBoxMedida.setItems(FXCollections.observableArrayList(
     			MedidaDistancia.EUCLIDIANA, 
     			MedidaDistancia.CHEBYSHEV,
     			MedidaDistancia.MANHATTAN
     			));
-    	comboBox.valueProperty().addListener((observable, oldValue, newValue) -> this.medida = newValue);    	
+    	comboBoxMedida.valueProperty().addListener((observable, oldValue, newValue) -> this.medida = newValue);    
+    	comboBoxK.setItems(FXCollections.observableArrayList(1,2,3,4,5,6,7,8,9,10));
+    	comboBoxK.valueProperty().addListener((observable, oldValue, newValue) -> this.valorK = newValue);    	
     }
     
     @FXML
@@ -97,9 +96,8 @@ public class TelaPrincipalController {
     }
     
     @FXML
-    private void handleSubmitAction(ActionEvent event) {
-    	System.out.println(this.texto + ' ' + this.medida + ' ' + this.imagem );
-    	hasPerson = dao.calcular(Integer.parseInt(this.texto), this.medida, this.imagem);
+    private void handleSubmitAction(ActionEvent event) {    	
+    	hasPerson = dao.calcular(this.valorK, this.medida, this.imagem);
     	this.showResult(hasPerson);
     }
     
