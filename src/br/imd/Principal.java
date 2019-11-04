@@ -42,5 +42,6 @@ public class Principal extends Application {
 		Scene scene = new Scene(layout1);
 		stage1.setScene(scene);
 		stage1.show();
+		
 	}
 }
