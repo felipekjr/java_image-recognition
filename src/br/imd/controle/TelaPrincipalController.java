@@ -76,7 +76,7 @@ public class TelaPrincipalController {
     			MedidaDistancia.CHEBYSHEV,
     			MedidaDistancia.MANHATTAN
     			));
-    	comboBox.valueProperty().addListener((observable, oldValue, newValue) -> this.medida = newValue);    	
+    	comboBox.valueProperty().addListener((observable, oldValue, newValue) -> this.medida = newValue);    	    	
     }
     
     @FXML
@@ -115,7 +115,7 @@ public class TelaPrincipalController {
     
     private void showResult(boolean hasPerson) {
     	textoResultado.setText(hasPerson ? "Existe uma pessoa na imagem!" : "Não existe pessoa!" );
-    	textoResultado.setStyle(hasPerson ? "-fx-text-fill: #00c853;" : "-fx-text-fill: #d50000;");
+    	textoResultado.getStyleClass().add(hasPerson? "verde" : "vermelho");
     	textoResultado.setVisible(true);
     }
 }

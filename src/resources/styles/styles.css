@@ -12,8 +12,13 @@
 .texto-resultado {
 	-fx-font-size: 30px;
 	-fx-font-weight: bold;	
-	-fx-font-family: Roboto;
-	-fx-text-fill: #676C6E;
+	-fx-font-family: Roboto;	
+}
+.verde {
+	-fx-fill: #00C853;
+}
+.vermelho {
+	-fx-fill: #D50000;
 }
 
 .menu-lateral {
