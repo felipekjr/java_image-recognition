@@ -44,7 +44,7 @@ public class TelaPrincipalController {
     @FXML private Button botaoApagar;
    
     private MedidaDistancia medida;
-    private Integer valorK;
+    private Integer valorK = 0;
     private String imagem;
     private boolean hasPerson;
     
@@ -104,6 +104,10 @@ public class TelaPrincipalController {
     @FXML
     private void handleSubmitAction(ActionEvent event) {    	
     	try {
+    		if (dao.verificar(this.valorK, this.medida, this.imagem)== false){
+    			this.showResult();
+    			return;
+    		}
     		hasPerson = dao.calcular(this.valorK, this.medida, this.imagem);
         	this.showResult(hasPerson);
     	} catch(Exception e) {
@@ -122,6 +126,13 @@ public class TelaPrincipalController {
 		botaoApagar.setVisible(true);
     }
     
+    private void showResult() {
+    	textoResultado.setText("Erros de parâmetros!");
+    	textoResultado.getStyleClass().clear();
+    	textoResultado.getStyleClass().add("texto-resultado");
+    	textoResultado.getStyleClass().add("vermelho");
+    	textoResultado.setVisible(true);  
+    }
     private void showResult(boolean hasPerson) {    	
     	textoResultado.setText(hasPerson ? "Existe uma pessoa na imagem!" : "Não existe pessoa na imagem!" );
     	textoResultado.getStyleClass().clear();
