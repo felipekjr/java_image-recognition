@@ -89,7 +89,7 @@ public class TelaPrincipalController {
 	        Image image = new Image(new FileInputStream(this.imagem));       
 	        this.showImage(image);  
     	} catch (Exception e) {
-    		System.out.println("Imagem nula, escolha novamente!");
+    		System.out.println("Imagem não pode ser nula, escolha novamente!");
     	}
       
     }
