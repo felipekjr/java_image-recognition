@@ -49,6 +49,6 @@
             <Button layoutX="97.0" layoutY="600.0" mnemonicParsing="false" onAction="#handleSubmitAction" prefHeight="46.0" prefWidth="201.0" styleClass="botao-submit" stylesheets="@../../../resources/styles/styles.css" text="Analisar" />
          </children>
       </Pane>
-      <Text id="textoResultado" fx:id="textoResultado" layoutX="1004.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto-resultado" />
+      <Text id="textoResultado" fx:id="textoResultado" layoutX="704.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto-resultado"/>
    </children>
 </Pane>

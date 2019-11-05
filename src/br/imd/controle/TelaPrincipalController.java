@@ -89,7 +89,7 @@ public class TelaPrincipalController {
 	        Image image = new Image(new FileInputStream(this.imagem));       
 	        this.showImage(image);  
     	} catch (Exception e) {
-    		System.out.println("Imagem não pode ser nula, escolha novamente!");
+    		System.out.println("Erro ao escolher imagem.Por favor, escolha novamente!");
     	}
       
     }
@@ -103,8 +103,13 @@ public class TelaPrincipalController {
     
     @FXML
     private void handleSubmitAction(ActionEvent event) {    	
-    	hasPerson = dao.calcular(this.valorK, this.medida, this.imagem);
-    	this.showResult(hasPerson);
+    	try {
+    		hasPerson = dao.calcular(this.valorK, this.medida, this.imagem);
+        	this.showResult(hasPerson);
+    	} catch(Exception e) {
+    		System.out.println("Ocorreu um erro de submissão. Por favor, preencha os campos corretamente!");
+    	}
+    	
     }
     
     private void showImage(Image image) {
@@ -117,9 +122,11 @@ public class TelaPrincipalController {
 		botaoApagar.setVisible(true);
     }
     
-    private void showResult(boolean hasPerson) {
-    	textoResultado.setText(hasPerson ? "Existe uma pessoa na imagem!" : "Não existe pessoa!" );
-    	textoResultado.getStyleClass().add(hasPerson? "verde" : "vermelho");
-    	textoResultado.setVisible(true);
+    private void showResult(boolean hasPerson) {    	
+    	textoResultado.setText(hasPerson ? "Existe uma pessoa na imagem!" : "Não existe pessoa na imagem!" );
+    	textoResultado.getStyleClass().clear();
+    	textoResultado.getStyleClass().add("texto-resultado");
+    	textoResultado.getStyleClass().add(hasPerson ? "verde" : "vermelho");
+    	textoResultado.setVisible(true);    	
     }
 }

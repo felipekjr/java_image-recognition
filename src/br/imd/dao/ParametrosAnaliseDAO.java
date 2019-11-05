@@ -15,7 +15,7 @@ public class ParametrosAnaliseDAO {
 	
 		ArrayList<String[]> dataset = getDataSet();
 		
-		public boolean calcular(int k, MedidaDistancia medidaDistancia, String caminhoImagem) {
+		public boolean calcular(int k, MedidaDistancia medidaDistancia, String caminhoImagem) throws Exception {
 		ArrayList<Float> hogAtributes = ImageUtil.extractAttr(caminhoImagem);		
 		Dictionary<Integer, Float> distancias;
 		
