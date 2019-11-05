@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.LinearGradient?>
@@ -19,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane id="layout1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="954.0" minWidth="-Infinity" prefHeight="954.0" prefWidth="1880.0" styleClass="body" stylesheets="@../../../resources/styles/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.imd.controle.TelaPrincipalController">
+<Pane id="layout1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="954.0" minWidth="-Infinity" prefHeight="954.0" prefWidth="1880.0" styleClass="body" stylesheets="@../../../resources/styles/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.imd.controle.TelaPrincipalController">
    <children>
       <Pane layoutX="-5.0" minHeight="1008.0" prefHeight="892.0" prefWidth="407.0" styleClass="menu-lateral" stylesheets="@../../../resources/styles/styles.css">
          <children>
@@ -40,20 +32,21 @@
                </font>
             </Text>     
             <Label layoutX="96.0" layoutY="40.0" styleClass="titulo" stylesheets="@../../../resources/styles/styles.css" text="JAVA IMAGE-RECOGNITION" />
-                  
-            <Label layoutX="35.0" layoutY="129.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Medida de Distância" />
-            <ComboBox id="comboBox" fx:id="comboBox" layoutX="34.0" layoutY="169.0" prefHeight="25.0" prefWidth="333.0" />
+
+            <Label layoutX="30.0" layoutY="110.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Medida de Distancia" />
+            <ComboBox id="comboBoxMedida" fx:id="comboBoxMedida" layoutX="29.0" layoutY="141.0" prefHeight="25.0" prefWidth="333.0" />
                       
-            <Label layoutX="37.0" layoutY="250.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Valor de K" />
-            <TextField id="textField" fx:id="textField" layoutX="37.0" layoutY="280.0" prefHeight="25.0" prefWidth="334.0" />            
+            <Label layoutX="28.0" layoutY="184.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Valor de K" />
+            <ComboBox id="comboBoxK" fx:id="comboBoxK" layoutX="28.0" layoutY="215.0" prefHeight="25.0" prefWidth="334.0" />           
+
             
-            <Label layoutX="38.0" layoutY="362.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Imagem" />
-             <Button id="botaoApagar" fx:id="botaoApagar" layoutX="296.0" layoutY="358.0" mnemonicParsing="false" onAction="#apagarImagem" prefHeight="20.0" prefWidth="77.0" styleClass="botao-apagar" stylesheets="@../../../resources/styles/styles.css" text="Apagar" />
-            <Button layoutX="39.0" layoutY="400.0" mnemonicParsing="false" onAction="#escolherImagem" prefHeight="263.0" prefWidth="334.0" styleClass="botao-arquivo" stylesheets="@../../../resources/styles/styles.css" text="+" />
-            <ImageView id="imageView" fx:id="imageView" fitHeight="263.0" fitWidth="334.0" layoutX="39.0" layoutY="400.0" pickOnBounds="true" styleClass="image-view" />
+            <Label layoutX="29.0" layoutY="258.0" styleClass="input-label" stylesheets="@../../../resources/styles/styles.css" text="Imagem" />
+             <Button id="botaoApagar" fx:id="botaoApagar" layoutX="287.0" layoutY="254.0" mnemonicParsing="false" onAction="#apagarImagem" prefHeight="20.0" prefWidth="77.0" styleClass="botao-apagar" stylesheets="@../../../resources/styles/styles.css" text="Apagar" />
+            <Button layoutX="30.0" layoutY="296.0" mnemonicParsing="false" onAction="#escolherImagem" prefHeight="263.0" prefWidth="334.0" styleClass="botao-arquivo" stylesheets="@../../../resources/styles/styles.css" text="+" />
+            <ImageView id="imageView" fx:id="imageView" fitHeight="263.0" fitWidth="334.0" layoutX="30.0" layoutY="296.0" pickOnBounds="true" styleClass="image-view" />
           
             
-            <Button layoutX="106.0" layoutY="718.0" mnemonicParsing="false" onAction="#handleSubmitAction" prefHeight="46.0" prefWidth="201.0" styleClass="botao-submit" stylesheets="@../../../resources/styles/styles.css" text="Analisar" />
+            <Button layoutX="97.0" layoutY="600.0" mnemonicParsing="false" onAction="#handleSubmitAction" prefHeight="46.0" prefWidth="201.0" styleClass="botao-submit" stylesheets="@../../../resources/styles/styles.css" text="Analisar" />
          </children>
       </Pane>
       <Text id="textoResultado" fx:id="textoResultado" layoutX="1004.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto-resultado" />
