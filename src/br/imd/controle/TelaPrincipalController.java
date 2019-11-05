@@ -73,19 +73,25 @@ public class TelaPrincipalController {
     			MedidaDistancia.CHEBYSHEV,
     			MedidaDistancia.MANHATTAN
     			));
+
     	comboBoxMedida.valueProperty().addListener((observable, oldValue, newValue) -> this.medida = newValue);    
     	comboBoxK.setItems(FXCollections.observableArrayList(1,2,3,4,5,6,7,8,9,10));
-    	comboBoxK.valueProperty().addListener((observable, oldValue, newValue) -> this.valorK = newValue);    	
+    	comboBoxK.valueProperty().addListener((observable, oldValue, newValue) -> this.valorK = newValue); 
     }
     
     @FXML
     private void escolherImagem(ActionEvent event) throws IOException {
-        FileChooser chooser = new FileChooser();
-        chooser.setTitle("Escolher imagem");
-        File file = chooser.showOpenDialog(new Stage());
-        imagem = file.getAbsolutePath();        
-        Image image = new Image(new FileInputStream(this.imagem));       
-        this.showImage(image);  
+    	try {
+    		FileChooser chooser = new FileChooser();
+	        chooser.setTitle("Escolher imagem");
+	        File file = chooser.showOpenDialog(new Stage());
+	        imagem = file.getAbsolutePath();        
+	        Image image = new Image(new FileInputStream(this.imagem));       
+	        this.showImage(image);  
+    	} catch (Exception e) {
+    		System.out.println("Imagem nula, escolha novamente!");
+    	}
+      
     }
     
     @FXML
@@ -113,7 +119,7 @@ public class TelaPrincipalController {
     
     private void showResult(boolean hasPerson) {
     	textoResultado.setText(hasPerson ? "Existe uma pessoa na imagem!" : "Não existe pessoa!" );
-    	textoResultado.setStyle(hasPerson ? "-fx-text-fill: #00c853;" : "-fx-text-fill: #d50000;");
+    	textoResultado.getStyleClass().add(hasPerson? "verde" : "vermelho");
     	textoResultado.setVisible(true);
     }
 }

@@ -38,7 +38,7 @@ public class ParametrosAnaliseDAO {
 	}
 	
 	private ArrayList<String[]> getDataSet(){
-		return new CsvUtil().extractDataset("C:\\Users\\Yago\\image-recognition\\src\\resources\\datasets\\attr_imagens.csv");
+		return new CsvUtil().extractDataset("src/resources/datasets/attr_imagens.csv");
 	}
 	
 }
