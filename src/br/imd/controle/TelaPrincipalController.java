@@ -98,7 +98,7 @@ public class TelaPrincipalController {
 
 	@FXML
 	private void apagarImagem(ActionEvent event) throws IOException {
-		imagem = "";
+		this.imagem = null;
 		imageView.setVisible(false);
 		botaoApagar.setVisible(false);
 	}
