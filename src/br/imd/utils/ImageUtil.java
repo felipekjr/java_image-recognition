@@ -1,4 +1,4 @@
-package utils;
+package br.imd.utils;
 
 import java.util.ArrayList;
 import java.util.List;

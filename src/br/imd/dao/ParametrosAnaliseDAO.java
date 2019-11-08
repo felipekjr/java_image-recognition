@@ -10,8 +10,8 @@ import br.imd.calc.Euclidiana;
 import br.imd.calc.Knn;
 import br.imd.calc.Manhattan;
 import br.imd.modelo.MedidaDistancia;
-import utils.CsvUtil;
-import utils.ImageUtil;
+import br.imd.utils.CsvUtil;
+import br.imd.utils.ImageUtil;
 
 public class ParametrosAnaliseDAO {
 
@@ -23,15 +23,15 @@ public class ParametrosAnaliseDAO {
 
 		switch (medidaDistancia) {
 		case EUCLIDIANA:
-			distancias = Euclidiana.calcular(hogAtributes, dataset);
+			distancias = new Euclidiana().calcular(hogAtributes, dataset);
 			System.out.println(Knn.calcular(dataset, distancias, k));
 			return Knn.calcular(dataset, distancias, k);
 		case CHEBYSHEV:
-			distancias = Chebyshev.calcular(hogAtributes, dataset);
+			distancias = new Chebyshev().calcular(hogAtributes, dataset);
 			System.out.println(Knn.calcular(dataset, distancias, k));
 			return Knn.calcular(dataset, distancias, k);
 		case MANHATTAN:
-			distancias = Manhattan.calcular(hogAtributes, dataset);
+			distancias = new Manhattan().calcular(hogAtributes, dataset);
 			System.out.println(Knn.calcular(dataset, distancias, k));
 			return Knn.calcular(dataset, distancias, k);
 		}

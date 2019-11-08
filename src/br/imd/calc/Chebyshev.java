@@ -4,21 +4,27 @@ import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
-public final class Chebyshev implements CalculoDistancia {
-
-	public static Dictionary<Integer, Float> calcular(ArrayList<Float> attr, ArrayList<String[]> dataset) {
+public class Chebyshev implements CalculoDistancia {		
+	
+	public Chebyshev() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public Dictionary<Integer, Float> calcular(ArrayList<Float> attr, ArrayList<String[]> dataset) {
 		// TODO Auto-generated method stub
 		float actual_dist = 0;
 		float max_dist = 0;
 		Dictionary<Integer, Float> dist = new Hashtable<Integer, Float>();
-		for (int j = 1; j < dataset.size(); j++) { // apartir de 1 pois o 0 são os atributos
-			for (int k = 0; k < 1000; k++) { // percorre cada elemento do HOG por lço
+		for (int j = 1; j < dataset.size(); j++) { // apartir de 1 pois o 0 sï¿½o os atributos
+			for (int k = 0; k < 1000; k++) { // percorre cada elemento do HOG por lï¿½o
 				actual_dist = Float.parseFloat(dataset.get(j)[k + 1]) - attr.get(k); // fazendo (xi-zi)
-				if (actual_dist > max_dist) { // trocando para a distância Máxima
+				if (actual_dist > max_dist) { // trocando para a distï¿½ncia Mï¿½xima
 					max_dist = actual_dist;
 				}
 			}
-			dist.put(j, max_dist); // colocando no dicionário o id do elemento com sua respectiva distância
+			dist.put(j, max_dist); // colocando no dicionï¿½rio o id do elemento com sua respectiva distï¿½ncia
 			max_dist = 0;
 		}
 		return dist; // dist = {id: distancia_da_imagem}
